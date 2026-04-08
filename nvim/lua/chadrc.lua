@@ -1,0 +1,195 @@
+-- This file needs to have same structure as nvconfig.lua
+-- https://github.com/NvChad/ui/blob/v2.5/lua/nvconfig.lua
+-- Please read that file to know all available options :(
+
+---@type ChadrcConfig
+local colors = {
+  gruberdarkerfg        = "#faf9f6",
+  gruberdarkerfg1d      = "#f4f4ff",
+  gruberdarkerfg2d      = "#f5f5f5",
+
+  gruberdarkerwhite     = "#ffffff",
+  gruberdarkerblack     = "#000000",
+
+  gruberdarkerbg1l      = "#101010",
+  gruberdarkerbg        = "#181818",
+  gruberdarkerbg1d      = "#282828",
+  gruberdarkerbg2d      = "#453d41",
+  gruberdarkerbg3d      = "#484848",
+  gruberdarkerbg4d      = "#52494e",
+
+  gruberdarkerred1l     = "#c73c3f",
+  gruberdarkerred       = "#f43841",
+  gruberdarkerred1d     = "#ff4f58",
+
+  gruberdarkergreen     = "#73c936",
+
+  gruberdarkeryellow    = "#ffdd33",
+
+  gruberdarkerbrown     = "#cc8c3c",
+
+  gruberdarkerquartz    = "#95a99f",
+
+  gruberdarkerniagara2l = "#303540",
+  gruberdarkerniagara1l = "#565f73",
+  gruberdarkerniagara   = "#96a6c8",
+  gruberdarkerwisteria  = "#9e95c7"
+}
+
+local M = {}
+M.base46 = {
+  -- theme = "onedark",
+  hl_override = {
+    Normal                           = { fg = colors.gruberdarkerfg, bg = colors.gruberdarkerbg },
+    NormalNC                         = { bg = colors.gruberdarkerfg },
+    SignColumn                       = { bg = colors.gruberdarkerbg },
+    LineNr                           = { fg = colors.gruberdarkerbg4d, bg = colors.gruberdarkerbg },
+    Cursor                           = { fg = colors.gruberdarkeryellow },
+    CursorLine                       = { bg = colors.gruberdarkerbg2d },
+    CursorLineNr                     = { fg = colors.gruberdarkeryellow, bg = colors.gruberdarkerbg },
+    Visual                           = { bg = colors.gruberdarkerbg2d },
+    NormalFloat                      = { bg = colors.gruberdarkerbg },
+    FloatBorder                      = { fg = colors.gruberdarkerfg, bg = colors.gruberdarkerbg },
+    String                           = { fg = colors.gruberdarkergreen },
+    Number                           = { fg = colors.gruberdarkerwisteria },
+    Float                            = { fg = colors.gruberdarkerwisteria },
+    Character                        = { fg = colors.gruberdarkerwisteria },
+    Boolean                          = { fg = colors.gruberdarkeryellow },
+    PreProc                          = { fg = colors.gruberdarkerfg },
+    Function                         = { fg = colors.gruberdarkerfg },
+    Comment                          = { fg = colors.gruberdarkerbrown, italic = true },
+    Keyword                          = { fg = colors.gruberdarkeryellow },
+    PreCondit                        = { fg = colors.gruberdarkeryellow },
+    Define                           = { fg = colors.gruberdarkeryellow },
+    Statement                        = { fg = colors.gruberdarkeryellow },
+    Conditional                      = { fg = colors.gruberdarkeryellow },
+    Operator                         = { fg = colors.gruberdarkeryellow },
+    StorageClass                     = { fg = colors.gruberdarkeryellow },
+    Exception                        = { fg = colors.gruberdarkeryellow },
+    Special                          = { fg = colors.gruberdarkeryellow },
+    Identifier                       = { fg = colors.gruberdarkeryellow },
+    Type                             = { fg = colors.gruberdarkerquartz },
+    Typedef                          = { fg = colors.gruberdarkerquartz },
+    Label                            = { fg = colors.gruberdarkerfg },
+    Repeat                           = { fg = colors.gruberdarkerfg },
+    Constant                         = { fg = colors.gruberdarkerquartz },
+    Structure                        = { fg = colors.gruberdarkerquartz },
+    Error                            = { fg = colors.gruberdarkerred },
+    LspReferenceText                 = { fg = colors.gruberdarkerquartz },
+    LspReferenceRead                 = { fg = colors.gruberdarkerquartz },
+    LspReferenceWrite                = { fg = colors.gruberdarkerquartz },
+    DiagnosticWarn                   = { fg = colors.gruberdarkeryellow },
+    DiagnosticError                  = { fg = colors.gruberdarkerred },
+
+    TbBufOn                          = { fg = colors.gruberdarkerfg, bg = colors.gruberdarkerbg },
+    TbBufOff                         = { fg = colors.gruberdarkerquartz, bg = colors.gruberdarkerbg },
+    TbCloseAllBufsBtn                = { fg = colors.gruberdarkerquartz, bg = colors.gruberdarkerbg },
+    TbThemeToggleBtn                 = { fg = colors.gruberdarkerquartz, bg = colors.gruberdarkerbg },
+    TbBufOnClose                     = { fg = colors.gruberdarkerquartz, bg = colors.gruberdarkerbg },
+    TbBufOffClose                    = { fg = colors.gruberdarkerquartz, bg = colors.gruberdarkerbg },
+    TbFill                           = { fg = colors.gruberdarkerquartz, bg = colors.gruberdarkerbg },
+
+    St_NormalMode                    = { fg = colors.gruberdarkerquartz, bg = colors.gruberdarkerbg },
+    St_NormalModeSep                 = { fg = colors.gruberdarkerbg, bg = colors.gruberdarkerbg },
+    St_InsertMode                    = { fg = colors.gruberdarkerquartz, bg = colors.gruberdarkerbg },
+    St_InsertModeSep                 = { fg = colors.gruberdarkerbg, bg = colors.gruberdarkerbg },
+    St_VisualMode                    = { fg = colors.gruberdarkerquartz, bg = colors.gruberdarkerbg },
+    St_VisualModeSep                 = { fg = colors.gruberdarkerbg, bg = colors.gruberdarkerbg },
+    St_ReplaceMode                   = { fg = colors.gruberdarkerquartz, bg = colors.gruberdarkerbg },
+    St_ReplaceModeSep                = { fg = colors.gruberdarkerbg, bg = colors.gruberdarkerbg },
+    St_CommandMode                   = { fg = colors.gruberdarkerquartz, bg = colors.gruberdarkerbg },
+    St_CommandModeSep                = { fg = colors.gruberdarkerbg, bg = colors.gruberdarkerbg },
+    St_TerminalMode                  = { fg = colors.gruberdarkerquartz, bg = colors.gruberdarkerbg },
+    St_TerminalModeSep               = { fg = colors.gruberdarkerbg, bg = colors.gruberdarkerbg },
+    St_ConfirmMode                   = { fg = colors.gruberdarkerquartz, bg = colors.gruberdarkerbg },
+    St_ConfirmModeSep                = { fg = colors.gruberdarkerbg, bg = colors.gruberdarkerbg },
+
+    St_file                          = { fg = colors.gruberdarkerquartz, bg = colors.gruberdarkerbg },
+    St_file_sep                      = { fg = colors.gruberdarkerbg, bg = colors.gruberdarkerbg },
+    St_EmptySpace                    = { fg = colors.gruberdarkerbg, bg = colors.gruberdarkerbg },
+    St_cwd_icon                      = { fg = colors.gruberdarkerquartz, bg = colors.gruberdarkerbg },
+    St_cwd_sep                       = { fg = colors.gruberdarkerbg, bg = colors.gruberdarkerbg },
+    St_cwd_text                      = { fg = colors.gruberdarkerquartz, bg = colors.gruberdarkerbg },
+    St_pos_icon                      = { fg = colors.gruberdarkerquartz, bg = colors.gruberdarkerbg },
+    St_pos_text                      = { fg = colors.gruberdarkerquartz, bg = colors.gruberdarkerbg },
+    St_pos_sep                       = { fg = colors.gruberdarkerbg, bg = colors.gruberdarkerbg },
+    St_Lsp                           = { fg = colors.gruberdarkerquartz, bg = colors.gruberdarkerbg },
+    St_LspMsg                        = { fg = colors.gruberdarkerquartz, bg = colors.gruberdarkerbg },
+    St_LspHints                      = { fg = colors.gruberdarkerquartz, bg = colors.gruberdarkerbg },
+    St_lspError                      = { fg = colors.gruberdarkerquartz, bg = colors.gruberdarkerbg },
+    St_LspWarning                    = { fg = colors.gruberdarkerquartz, bg = colors.gruberdarkerbg },
+    St_LspStatus                     = { fg = colors.gruberdarkerquartz, bg = colors.gruberdarkerbg },
+    St_gitIcons                      = { fg = colors.gruberdarkerquartz, bg = colors.gruberdarkerbg },
+
+    ["@string"]                      = { fg = colors.gruberdarkergreen },
+    ["@string.documentation"]        = { fg = colors.gruberdarkergreen },
+    ["@string.excape"]               = { fg = colors.gruberdarkergreen },
+    ["@string.regex"]                = { fg = colors.gruberdarkergreen },
+    ["@string.special"]              = { fg = colors.gruberdarkergreen },
+    ["@string.special.path"]         = { fg = colors.gruberdarkergreen },
+    ["@string.special.symbol"]       = { fg = colors.gruberdarkergreen },
+    ["@string.special.url"]          = { fg = colors.gruberdarkergreen },
+
+    ["@number"]                      = { fg = colors.gruberdarkerwisteria },
+    ["@number.float"]                = { fg = colors.gruberdarkerwisteria },
+    ["@character"]                   = { fg = colors.gruberdarkerwisteria },
+
+    ["@boolean"]                     = { fg = colors.gruberdarkeryellow },
+    ["@boolean.builtin"]             = { fg = colors.gruberdarkeryellow },
+
+    ["@comment"]                     = { fg = colors.gruberdarkerbrown, italic = true },
+    ["@comment.documentation"]       = { fg = colors.gruberdarkerbrown, italic = true },
+
+    ["@constant"]                    = { fg = colors.gruberdarkerquartz },
+    ["@constant.builtin"]            = { fg = colors.gruberdarkerquartz },
+    ["@constant.macro"]              = { fg = colors.gruberdarkerquartz },
+
+    ["@function"]                    = { fg = colors.gruberdarkerfg },
+    ["@function.builtin"]            = { fg = colors.gruberdarkerfg },
+    ["@function.call"]               = { fg = colors.gruberdarkerfg },
+    ["@function.macro"]              = { fg = colors.gruberdarkerfg },
+    ["@function.method"]             = { fg = colors.gruberdarkerfg },
+    ["@function.method.call"]        = { fg = colors.gruberdarkerfg },
+    ["@function.parameter"]          = { fg = colors.gruberdarkerfg },
+
+    ["@keyword"]                     = { fg = colors.gruberdarkeryellow },
+    ["@keyword.builtin"]             = { fg = colors.gruberdarkeryellow },
+    ["@keyword.conditional"]         = { fg = colors.gruberdarkeryellow },
+    ["@keyword.conditional.ternary"] = { fg = colors.gruberdarkeryellow },
+    ["@keyword.coroutine"]           = { fg = colors.gruberdarkeryellow },
+    ["@keyword.debug"]               = { fg = colors.gruberdarkeryellow },
+    ["@keyword.directive"]           = { fg = colors.gruberdarkeryellow },
+    ["@keyword.directive.define"]    = { fg = colors.gruberdarkeryellow },
+    ["@keyword.exception"]           = { fg = colors.gruberdarkeryellow },
+    ["@keyword.function"]            = { fg = colors.gruberdarkeryellow },
+    ["@keyword.import"]              = { fg = colors.gruberdarkeryellow },
+    ["@keyword.export"]              = { fg = colors.gruberdarkeryellow },
+    ["@keyword.modifier"]            = { fg = colors.gruberdarkeryellow },
+    ["@keyword.operator"]            = { fg = colors.gruberdarkeryellow },
+    ["@keyword.repeat"]              = { fg = colors.gruberdarkeryellow },
+    ["@keyword.return"]              = { fg = colors.gruberdarkeryellow },
+    ["@keyword.type"]                = { fg = colors.gruberdarkeryellow },
+    ["@keyword.default"]             = { fg = colors.gruberdarkeryellow },
+
+    ["@property"]                    = { fg = colors.gruberdarkerfg },
+
+    ["@label"]                       = { fg = colors.gruberdarkergreen, bg = colors.gruberdarkerbg1d },
+
+    ["@type"]                        = { fg = colors.gruberdarkerquartz },
+    ["@type.builtin"]                = { fg = colors.gruberdarkerquartz },
+    ["@type.defination"]             = { fg = colors.gruberdarkerquartz },
+
+    ["@tag"]                         = { fg = colors.gruberdarkeryellow },
+    ["@tag.builtin"]                 = { fg = colors.gruberdarkeryellow },
+    ["@tag.attribute"]               = { fg = colors.gruberdarkerquartz },
+    ["@tag.delimiter"]               = { fg = colors.gruberdarkeryellow },
+
+    ["@variable"]                    = { fg = colors.gruberdarkerfg },
+    ["@variable.builtin"]            = { fg = colors.gruberdarkerfg },
+    ["@variable.member"]             = { fg = colors.gruberdarkerfg },
+    ["@variable.parameter"]          = { fg = colors.gruberdarkerfg },
+    ["@variable.parameter.builtin"]  = { fg = colors.gruberdarkerfg },
+  },
+}
+
+return M
