@@ -1,7 +1,7 @@
 require "nvchad.options"
 -- add yours here!
 vim.opt.termguicolors = true
-vim.opt.guifont = { "0xProto Nerd Font Mono", ":h30" }
+vim.opt.guifont = { "0xProto Nerd Font Mono", ":h24" }
 vim.wo.relativenumber = true
 vim.o.list = true
 vim.o.listchars = "tab:» ,lead:•,trail:•"
@@ -14,5 +14,3 @@ vim.api.nvim_create_autocmd("TermOpen", {
     vim.cmd("resize 10")
   end
 })
--- local o = vim.o
--- o.cursorlineopt ='both' -- to enable cursorline!

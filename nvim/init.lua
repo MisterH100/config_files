@@ -17,6 +17,7 @@ require("lazy").setup({
   },
   { import = "plugins" },
 }, lazy_config)
+
 require "options"
 require "nvchad.autocmds"
 require "configs.lspconfig"
