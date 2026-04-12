@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Auto Center Windows
+Exec=/home/wrdn/center-win.sh
+Hidden=false
+X-GNOME-Autostart-enabled=true
